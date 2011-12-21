@@ -1,0 +1,81 @@
+body {
+  min-width:300px;
+  height:374px;
+  overflow-x:hidden;
+  font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+  font-size:12px;
+}
+p, h1, form, button{border:0; margin:0; padding:0;}
+.spacer{clear:both; height:1px;}
+
+/* ----------- My Form ----------- */
+.myform{
+margin:0 auto;
+height:340px;
+width:400px;
+padding:14px;
+}
+
+/* ----------- stylized ----------- */
+#stylized{
+border:solid 2px #b7ddf2;
+background:#ebf4fb;
+}
+#stylized h1 {
+font-size:14px;
+font-weight:bold;
+margin-bottom:8px;
+}
+#stylized p{
+font-size:11px;
+color:#666666;
+margin-bottom:20px;
+border-bottom:solid 1px #b7ddf2;
+padding-bottom:10px;
+}
+#stylized label{
+display:block;
+font-weight:bold;
+text-align:right;
+width:140px;
+float:left;
+}
+#stylized .small{
+color:#666666;
+display:block;
+font-size:11px;
+font-weight:normal;
+text-align:right;
+width:140px;
+}
+#stylized .textline, .textbox{
+float:left;
+font-size:12px;
+padding:4px 2px;
+border:solid 1px #aacfe4;
+width:250px;
+margin:2px 0 20px 10px;
+}
+#stylized .radio{
+float:left;
+display:block;
+margin: 2px 5px 0px 10px;
+}
+#stylized #imgurl{
+margin-left:150px;	
+}
+#stylized button,a{
+clear:both;
+margin-left:150px;
+width:125px;
+height:31px;
+background:#6D84B4;
+text-align:center;
+color:#FFFFFF;
+font-size:11px;
+font-weight:bold;
+}
+#stylized a{
+padding: 8px 30px 8px 30px;
+text-decoration: none
+}

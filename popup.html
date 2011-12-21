@@ -1,0 +1,92 @@
+<div id="stylized" class="myform">
+  <form name="myform">
+    <h1>Share Link on Facebook</h1>
+    <p>Add custom title, description and thumbnail image to Facebook Link</p>
+    <label>Title
+    <span class="small">Add your Link's Title</span>
+    </label>
+    <input type="text" id="title" name='title' class='textline' placeholder="Link's Title" title="Link's Title"/><br />
+    <label>Link URL
+    <span class="small">Add your Link's URL</span>
+    </label>
+    <input type="text" id="url" name='link' class='textline' placeholder="Link's URL" title="Link's URL"/><br />
+    <label>Description
+    <span class="small">Add small description of Link</span>
+    </label>
+    <textarea rows="3" cols="40" id="desc" name='desc' class='textbox'  placeholder="Link's Description" title="Link's Description"></textarea><br />
+    <label>Thumbnail
+    <span class="small">Add Thumbnail Image</span></label>
+    <input type="radio" name="radio" value="1" class="radio"/>Generate Image Automatically<br/>
+    <input type="radio" name="radio" value="0" class="radio"/>Add Image from the Web
+    <input type="text" id="imgurl" name='webimgurl' class='textline' placeholder="Thumbnail URL" title="Thumbnail URL" style="display:none;"/><br/><br/>
+    <div id="process-button">
+      <button>Process</button>
+    </div>
+  <form>
+</div>
+
+<link type='text/css' rel='stylesheet' href='style.css' />
+<script type="text/javascript" 
+  src="http://www.google.com/jsapi">
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27112300-1']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  
+  function trackButton(button_id) {
+    _gaq.push(['_trackEvent', 'button' + button_id, 'clicked']);
+  };
+
+  google.load("jquery", "1.7");
+
+  google.setOnLoadCallback(function() {
+    init();
+  });
+
+  function init()
+  {
+    var checkimgurl = 1;
+    _gaq.push(['_trackPageview']);
+    
+    $(document).ready(function() {
+      $("input[name='radio']").change(function(){
+        if ($("input[name='radio']:checked").val() == '1') {
+          $('#imgurl').css("display", "none");
+          checkimgurl = 0;
+        }
+        else{
+          $('#imgurl').css("display", "block");
+          checkimgurl = 1;
+        }
+      });
+      $("#process-button").click(function() {
+      		 trackButton(1);
+           myform.title.disabled = true;
+           myform.link.disabled = true;
+           myform.desc.disabled = true;
+           $("input[name='radio']").attr('disabled', 'disabled');
+           myform.webimgurl.disabled = true;
+           var share_url = "http://www.facebook.com/sharer.php?";
+           var title = $("#title").val();
+           var link_url = $("#url").val();
+           var img_url;
+           if (checkimgurl == 0) {
+            img_url = encodeURIComponent("http://pdfmyurl.com/?url=" + link_url + "&--thumb");
+           }
+           else {
+            img_url = $("#imgurl").val();
+           }
+           var desc = $("#desc").val();
+           var url = share_url + "s= 100&amp;p[title]=" + title + "&amp;p[url]=" + link_url + "&amp;p[images][0]=" + img_url + "&amp;p[summary]=" + desc;  
+           $('#process-button').html('<a href="' + url + '" target="_blank" id="fblink">Share Link on Facebook</a>');
+      });
+    });
+  }
+</script>

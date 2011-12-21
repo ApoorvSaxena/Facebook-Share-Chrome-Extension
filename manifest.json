@@ -1,0 +1,20 @@
+{
+  "name": "Facebook Share",
+  "version": "1.0.0",
+  "description": "This extension allows you to share the Facebook Links with custom title, description and image. It also generates a thumbshot of the link if image url is not provided.",
+  "icons": { 
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "browser_action": {
+  	"default_title": "Facebook Link Share",
+    "default_icon": "icon.png",
+    "popup": "popup.html"
+  },
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ]
+}
