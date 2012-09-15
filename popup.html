@@ -1,0 +1,118 @@
+<head>
+    <title>Share Link on Facebook</title>
+    <style type="text/css">
+        body {
+            min-width:300px;
+            overflow-x:hidden;
+            font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+            font-size:12px;
+            bottom: 0px;
+        }
+        p, h1, form, button{border:0; margin:0; padding:0;}
+        .spacer{clear:both; height:1px;}
+
+        /* ----------- My Form ----------- */
+        .myform{
+            margin:0 auto;
+            height:340px;
+            width:400px;
+            padding:14px;
+        }
+
+        /* ----------- stylized ----------- */
+        #stylized{
+            max-height:374px;
+            border:solid 2px #b7ddf2;
+            background:#ebf4fb;
+        }
+        #stylized h1 {
+            font-size:14px;
+            font-weight:bold;
+            margin-bottom:8px;
+        }
+        #stylized p{
+            font-size:11px;
+            color:#666666;
+            margin-bottom:20px;
+            border-bottom:solid 1px #b7ddf2;
+            padding-bottom:10px;
+        }
+        #stylized label{
+            display:block;
+            font-weight:bold;
+            text-align:right;
+            width:140px;
+            float:left;
+        }
+        #stylized .small{
+            color:#666666;
+            display:block;
+            font-size:11px;
+            font-weight:normal;
+            text-align:right;
+            width:140px;
+        }
+        #stylized .textline, .textbox{
+            float:left;
+            font-size:12px;
+            padding:4px 2px;
+            border:solid 1px #aacfe4;
+            width:250px;
+            margin:2px 0 20px 10px;
+        }
+        #stylized .radio{
+            float:left;
+            display:block;
+            margin: 2px 5px 0px 10px;
+        }
+        #stylized #imgurl{
+            margin-left:150px;  
+        }
+        #stylized button,a{
+            clear:both;
+            margin-left:150px;
+            width:125px;
+            height:31px;
+            background:#6D84B4;
+            text-align:center;
+            color:#FFFFFF;
+            font-size:11px;
+            font-weight:bold;
+        }
+        #stylized a{
+            padding: 8px 30px 8px 30px;
+            text-decoration: none
+        }
+
+    </style>
+</head>
+<body>
+    <div id="stylized" class="myform">
+      <form name="myform">
+        <h1>Share Link on Facebook</h1>
+        <p>Add custom title, description and thumbnail image to Facebook Link</p>
+        <label>Title
+        <span class="small">Add your Link's Title</span>
+        </label>
+        <input type="text" id="title" name='title' class='textline' placeholder="Link's Title" title="Link's Title"/><br />
+        <label>Link URL
+        <span class="small">Add your Link's URL</span>
+        </label>
+        <input type="text" id="url" name='link' class='textline' placeholder="Link's URL" title="Link's URL"/><br />
+        <label>Description
+        <span class="small">Add small description of Link</span>
+        </label>
+        <textarea rows="3" cols="40" id="desc" name='desc' class='textbox'  placeholder="Link's Description" title="Link's Description"></textarea><br />
+        <label>Thumbnail
+        <span class="small">Add Thumbnail Image</span></label>
+        <input type="radio" name="radio" value="generate" class="radio"/>Generate Image Automatically<br/>
+        <input type="radio" name="radio" value="given" class="radio"/>Add Image from the Web
+        <input type="text" id="imgurl" name='webimgurl' class='textline' placeholder="Thumbnail URL" title="Thumbnail URL" style="display:none;"/><br/><br/>
+        <div id="process-button">
+          <a href="http://www.facebook.com/sharer.php" target="_blank" id="fblink">Share Link on Facebook</a>
+        </div>
+      <form>
+    </div>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="background.js"></script>
+</body>
